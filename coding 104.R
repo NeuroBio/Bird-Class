@@ -1,22 +1,32 @@
 #Coding 104!
+#####
 rm(list = objects()) #this kills everything in your environment!!!!!
 setwd("C:/Users/Kara/Documents/r/Birbclass")
 TestData<-read.table("abigailtestdata.txt", sep = '\t',header = TRUE, fileEncoding = "UTF-8")
 MetaData<-read.csv('TestMetaData Feb 19th-Mar19th.csv')
 
+#install.packages("RCurl") #you only ever need to run this once!  It adds a set of functions (a package) to R
+library(bitops)#load functions from that package
+library(RCurl)#load functions from that package
 
-source(BypassData.R)
+#The next two lines load some code from my GitHub Repo, so you have access to some tools you need
+script <- getURL("https://raw.githubusercontent.com/NeuroBio/2017-Meta-Analysis/master/Code/Tree%20functions_.R?token=AITiyWT-dxT0Bj-3txWgyOkiBq06eY0Dks5aeuYswA%3D%3D", ssl.verifypeer = FALSE)
+eval(parse(text = script))
 
+#####
+
+#INSTRUCTIONS!
 #The point of today is that sharing is caring,
 #but sharing badly is almost as bad as not sharing.
 #This will not be a "coding lesson" per se as much as a day
-#to make useful code for the whole class.
+#to make useful code for the whole class and learning to do it well.
 
 #There are three projects.  Two people will work separately and
 #together on each one.  Each person will write their own code
 #in an attempt to find the best solution.  You may talk and
 #share ideas.  Your code should be well commented, so another
 #member of the class knows what each segment of code does
+#####
 
 #Project 1:
 #The Cleaner:  This is a function that will convert the data from
@@ -46,6 +56,13 @@ source(BypassData.R)
 #combine the two data.frames as a named, 2-element list (AllData) and "return" it
 #I completed this in 86 lines, including my comments.
 #I did a number of google searches to figure out how to do some of the tasks
+
+#TestCases:
+###A original data
+###B changed filenames
+###C changed filenames
+###D scrambled columns
+#DO NOT FORGET TO TEST YOUR YEAR MECHNISM!
 
 Cleaner <- function(ParseData, MetaData, YearOnly = FALSE){
 #this first segment only deals with  the Parser Data
@@ -127,6 +144,12 @@ Cleaner <- function(ParseData, MetaData, YearOnly = FALSE){
   return(AllData)
 }
 FinalRun <- Cleaner(TestData,MetaData)
+Cleaner(P1_Ai, P1_Aii)
+Cleaner(P1_Bi, P1_Bii)
+Cleaner(P1_Ci, P1_Cii)
+Cleaner(P1_Di, P1_Dii, YearOnly = TRUE)
+
+#this is an extra case to prove that my different functions work together!
 
 #Project 2:
 #The DuplicateFlagger: this name is self explanatory.
@@ -143,9 +166,24 @@ FinalRun <- Cleaner(TestData,MetaData)
 #Also remember that some sougs are intentionally represented multiple times, because the
 #we intentionally took multiple bouts form birds with complex repertoires.
 #We do NOT want to flag those!
-#I completed this in 67 lines, including my comments.
+#I completed this in 57 lines, including my comments.
 #I spent a lot of time confusing myself, so comment as you go, or you will get lost.
 
+#TestCases:
+###A) Original Data, full year
+###B) 4-dig year
+###C) Two Species
+###D) Different number of rows w/ intentional duplicates
+###E) Row Indicies Scrambled
+###F) Col Indicies Scrambled
+
+#ANSWERS
+#Correct Answer for A, B, D, and F. 
+###[1] "Check Chipping Sparrow for indicies: 5 6 7 8 9 10"
+###[1] "Check Chipping Sparrow for indicies: 11 12"
+###[1] "Check Chipping Sparrow for indicies: 21 22"
+###C is missing 11,12 because of where I put the RWBB, and 3 calls RWBB
+###E has the order scrambled 2,1,3
 DuplicateFlagger <- function(MetaData){
 #Reduce the dataset by removing intentional duplicates via checking the XCID
   BoutsFromSameXCID <- which(duplicated(MetaData$XenoCantoCatalogNumber) == TRUE)
@@ -190,7 +228,7 @@ DuplicateFlagger <- function(MetaData){
                 for(l in seq_along(Years)){
                   YearsInd <- which(YearsMod[SpeciesInd[RecordsInd[PlaceInd]]] == Years[l])
                   if(length(YearsInd) > 1){ #because if only 1, then assume no dups
-                    print(paste0("Check ", CommonName, " for indicies: ",
+                    print(paste0("Check ", CommonName[i], " for indicies: ",
                                 ###note how I used rownames to account for how we changed the size of the data.frame earlier
                                  paste(rownames(MetaData)[SpeciesInd[RecordsInd[PlaceInd[YearsInd]]]], collapse=" ")))
                   }
@@ -203,23 +241,33 @@ DuplicateFlagger <- function(MetaData){
     }
   }
 }
+
 DuplicateFlagger(FinalRun$MetaData)
+DuplicateFlagger(P2_A$MetaData)
+DuplicateFlagger(P2_B$MetaData)
+DuplicateFlagger(P2_C$MetaData)
+DuplicateFlagger(P2_D$MetaData)
+DuplicateFlagger(P2_E$MetaData)
+DuplicateFlagger(P2_F$MetaData)
+
 
 #Project 3:
 #BoutCompiler: remember that some of the parsed bouts came from the same song recording.
-#we want a fucntion that will find these duplicate bouts and REPLACE them with a SINGLE average
-#of the entries.
-#I completed this in 52 lines, including my comments.
-#I spent WAY more time thinking than coding.
-Results$MetaData$XenoCantoCatalogNumber[5] <- 6244
-Results$MetaData$XenoCantoCatalogNumber[6] <- 12579
-Results$MetaData$BirdCommonName[c(13:15)] <- "Red-winged Black Bird"
-Results$MetaData$XenoCantoCatalogNumber[c(13:15)] <- 707
+#we want a function that will find these duplicate bouts and REPLACE them with a SINGLE average
+#of the entries.  Return the edited results.
+#I completed this in 54 lines, including my comments.
+#This is a tricky logic puzzle. I spent WAY more time thinking than I did actually coding.
 
 
+#TestCases:
+###A original data
+###B added one duplicate
+###C added two duplicates
+###D added two duplicates and a second species
+###E added two duplicates across the two species
+###F same as E with scrambled cols
+###G everything duplicated
 
-
-Results <- FinalRun
 BoutCompiler <- function(Results){
 #Set up top level variables:
   CommonName <- unique(Results$MetaData$BirdCommonName) #breaking the data by species, so the code will run faster
@@ -267,9 +315,18 @@ BoutCompiler <- function(Results){
   RemoveInd <- na.omit(unlist(CutInd))
   LoadInd <- na.omit(unlist(LoadInd))
   if(length(LoadInd) > 0){
-    Results$MetaData <- Results$MetaData[-unlist(CutInd),]
-    Results$ParseData[unlist(LoadInd),ColInd] <- Add
-    Results$ParseData <- Results$ParseData[-unlist(CutInd),]
-  }else(warning("No duplicates in dataset; Nothing changed."))
+    Results$MetaData <- Results$MetaData[-RemoveInd,]
+    Results$ParseData[LoadInd,ColInd] <- Add
+    Results$ParseData <- Results$ParseData[-RemoveInd,]
+    return(Results)
+  }else{warning("No duplicates in dataset; Nothing changed.--CR")}
 }
-BoutCompiler(FinalRun)
+
+BoutCompiler(FinalRun) #returns a warning I coded in
+length(BoutCompiler(P3_A)$MetaData[,1]) #returns a warning I coded in + an error
+length(BoutCompiler(P3_B)$MetaData[,1]) #24
+length(BoutCompiler(P3_C)$MetaData[,1]) #23
+length(BoutCompiler(P3_D)$MetaData[,1]) #23
+length(BoutCompiler(P3_E)$MetaData[,1]) #21
+length(BoutCompiler(P3_F)$MetaData[,1]) #21
+length(BoutCompiler(P3_G)$MetaData[,1]) #21
