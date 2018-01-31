@@ -10,7 +10,7 @@ library(bitops)#load functions from that package
 library(RCurl)#load functions from that package
 
 #The next two lines load some code from my GitHub Repo, so you have access to some tools you need
-script <- getURL("https://raw.githubusercontent.com/NeuroBio/2017-Meta-Analysis/master/Code/Tree%20functions_.R?token=AITiyWT-dxT0Bj-3txWgyOkiBq06eY0Dks5aeuYswA%3D%3D", ssl.verifypeer = FALSE)
+script <- getURL("https://raw.githubusercontent.com/NeuroBio/BirbClass/master/TestCase%20SetUp.R?token=AITiySgV28NQJ0bp5IZePE_iPT-IGarrks5aezjtwA%3D%3D", ssl.verifypeer = FALSE)
 eval(parse(text = script))
 
 #####

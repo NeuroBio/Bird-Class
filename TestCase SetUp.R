@@ -115,21 +115,21 @@ P2_A <- Initializer(TestData,MetaData)
 #original data, 4-dig year
 P2_B <- Initializer(TestData,MetaData, YearOnly = TRUE)
 #Renamed some birds as RWBB
-P2_C <- TestP2_A
+P2_C <- P2_A
 P2_C$MetaData$BirdCommonName[12:25] <- "Red-winged Black Bird"
 P2_C$MetaData$BirdGenus[12:25] <- "Agelaius"
 P2_C$MetaData$BirdSpecies[12:25] <- "phoeniceus"
 #original data included intional, bout duplicates
-P2_D <- TestP2_A
+P2_D <- P2_A
 P2_D$MetaData <- rbind.data.frame(P2_D$MetaData,P2_D$MetaData)
 #original data, row order scrambled
-P2_E <- TestP2_A
+P2_E <- P2_A
 set.seed(49)
 ScrambleInd <- sample(1:25, 25)
 P2_E$MetaData <- P2_E$MetaData[ScrambleInd,]
 
 #original data, col order scrambled
-P2_F <- TestP2_A
+P2_F <- P2_A
 set.seed(49)
 ScrambleInd <- sample(1:12, 12)
 P2_E$MetaData <- P2_E$MetaData[,ScrambleInd]
