@@ -1,0 +1,26 @@
+BirdSongID,XenoCantoCatalogNumber,RecordingType,BirdCommonName,BirdGenus,BirdSpecies,RecordingDateTime,RecordingCountry,RecordingLocation,RecordingLatitude,RecordingLongitude,Recordist,SongURL,SongUnavailable,SongDownloaded
+4769,6244,song,Chipping Sparrow,Spizella,passerina,6/11/2006 8:20,Mexico,"Municipio de Galeana, Nuevo Leon",24.8179,-100.06485,Manuel Grosselet,http://www.xeno-canto.org/6244/download,0,1
+9911,12579,song,Chipping Sparrow,Spizella,passerina,4/14/2007 7:42,United States,"Hovenweep Canyon, Montezuma County, Colorado",37.622934,-108.752289,Andrew Spencer,http://www.xeno-canto.org/12579/download,0,1
+10904,13646,song,Chipping Sparrow,Spizella,passerina,5/21/2007 7:50,Canada,"Rivière Éternité, Saguenay, Quebec",48.2942,-70.3417,Chris Parrish,http://www.xeno-canto.org/13646/download,0,1
+11573,14415,song,Chipping Sparrow,Spizella,passerina,6/25/2007 9:13,Canada,"Canyon, Kananaskis Lakes, Alberta",50.6878,-115.1317,Chris Parrish,http://www.xeno-canto.org/14415/download,0,1
+13709,16981,Song,Chipping Sparrow,Spizella,passerina,5/7/2007 0:00,United States,"Michigan, Monroe County",41.93338,-83.54994,Allen T. Chartier,http://www.xeno-canto.org/16981/download,0,1
+13710,16982,Song,Chipping Sparrow,Spizella,passerina,5/7/2007 0:00,United States,"Michigan, Monroe County",41.93338,-83.54994,Allen T. Chartier,http://www.xeno-canto.org/16982/download,0,1
+13711,16983,Song,Chipping Sparrow,Spizella,passerina,5/7/2007 0:00,United States,"Michigan, Monroe County",41.93338,-83.54994,Allen T. Chartier,http://www.xeno-canto.org/16983/download,0,1
+13712,16984,"Song, atypical",Chipping Sparrow,Spizella,passerina,5/7/2007 0:00,United States,"Michigan, Monroe County",41.93338,-83.54994,Allen T. Chartier,http://www.xeno-canto.org/16984/download,0,1
+13713,16985,Song,Chipping Sparrow,Spizella,passerina,5/7/2007 0:00,United States,"Michigan, Monroe County",41.93338,-83.54994,Allen T. Chartier,http://www.xeno-canto.org/16985/download,0,1
+13885,17172,Song,Chipping Sparrow,Spizella,passerina,7/16/2007 0:00,United States,"Michigan, Monroe County",41.93338,-83.54994,Allen T. Chartier,http://www.xeno-canto.org/17172/download,0,1
+23060,31305,Song,Chipping Sparrow,Spizella,passerina,6/3/2008 0:00,United States,"Michigan, St. Clair County ",43.1256,-82.6098,Allen T. Chartier,http://www.xeno-canto.org/31305/download,0,1
+23061,31306,Song,Chipping Sparrow,Spizella,passerina,6/17/2008 0:00,United States,"Michigan, St. Clair County ",43.1256,-82.6098,Allen T. Chartier,http://www.xeno-canto.org/31306/download,0,1
+37770,56891,Song,Chipping Sparrow,Spizella,passerina,6/25/2010 0:00,United States,"Crane Wildlife Management Area, Falmouth, Bar",41.637,-70.56,Ian Davies,http://www.xeno-canto.org/56891/download,0,1
+39885,61635,song,Chipping Sparrow,Spizella,passerina,5/18/2010 9:55,United States,"North Cobble, Shasta County, California",40.83,-121.385,Luke Owens,http://www.xeno-canto.org/61635/download,0,1
+43101,66021,Song,Chipping Sparrow,Spizella,passerina,6/19/2010 7:20,Canada,"Little Green Lake, Cariboo, British Columbia",51.43,-121.078,Ian Cruickshank,http://www.xeno-canto.org/66021/download,0,1
+50287,76506,song,Chipping Sparrow,Spizella,passerina,4/23/2011 6:54,United States,"Dordt College Campus, Sioux, Iowa",43.082,-96.166,Jonathon Jongsma,http://www.xeno-canto.org/76506/download,0,1
+51511,77992,Song,Chipping Sparrow,Spizella,passerina,5/14/2011 13:23,United States,"Goshen, Bingham County, Idaho",43.328,-112.035,Ryan P. O'Donnell,http://www.xeno-canto.org/77992/download,0,1
+52572,79970,song,Chipping Sparrow,Spizella,passerina,6/5/2011 7:17,United States,"Nerstrand Big Woods SP, Rice, Minnesota",44.343,-93.105,Jonathon Jongsma,http://www.xeno-canto.org/79970/download,0,1
+55443,83519,song,Chipping Sparrow,Spizella,passerina,4/27/2008 0:00,United States,"Syracuse, NY",42.6409,-77.3509,Jelmer Poelstra,http://www.xeno-canto.org/83519/download,0,1
+55621,83733,Song,Chipping Sparrow,Spizella,passerina,7/5/2011 5:55,Canada,"The Shack, North of Port Hope, Ontario",44.0489,-78.2787,David Geale,http://www.xeno-canto.org/83733/download,0,1
+68425,100725,song,Chipping Sparrow,Spizella,passerina,5/8/2012 8:00,United States,"W Lancaster, Lancaster Co., Pennsylvania",40.043,-76.345,Daniel Lane,http://www.xeno-canto.org/100725/download,0,1
+68900,101429,song,Chipping Sparrow,Spizella,passerina,5/9/2012 8:55,Canada,"W Lancaster, Lancaster Co., Pennsylvania",40.0428,-76.3448,Daniel Lane,http://www.xeno-canto.org/101429/download,0,1
+69857,102952,song,Chipping Sparrow,Spizella,passerina,6/14/2010 8:10,United States,"Carman Valley, Sierra County, California",39.698,-120.453,Eric DeFonso,http://www.xeno-canto.org/102952/download,0,1
+71129,104707,Song,Chipping Sparrow,Spizella,passerina,6/12/2012 9:00,United States,"Carpenter Canyon, Spring Mountains",36.244,-115.719,Paul van Els,http://www.xeno-canto.org/104707/download,0,1
+71253,104951,song,Chipping Sparrow,Spizella,passerina,6/15/2012 14:50,United States,"Wheeler Peak Rd at 2625m, Great Basin NP, Whi",39.034,-114.271,Eric DeFonso,http://www.xeno-canto.org/104951/download,0,1
