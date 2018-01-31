@@ -172,6 +172,7 @@ P3_G$MetaData <- rbind.data.frame(P3_G$MetaData,P3_G$MetaData)
 rm("Initializer")
 rm(MetaData)
 rm(TestData)
+rm(ScrambleInd)
 
 warning("I removed the original TestData and MetaData files!\r
         Use the test cases for your project in order. \r\n

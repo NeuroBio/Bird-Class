@@ -1,4 +1,6 @@
 #Coding 104!
+
+#RUN THIS CODE FIRST
 #####
 rm(list = objects()) #this kills everything in your environment!!!!!
 setwd("C:/Users/Kara/Documents/r/Birbclass")
@@ -10,25 +12,48 @@ library(bitops)#load functions from that package
 library(RCurl)#load functions from that package
 
 #The next two lines load some code from my GitHub Repo, so you have access to some tools you need
-script <- getURL("https://raw.githubusercontent.com/NeuroBio/BirbClass/master/TestCase%20SetUp.R?token=AITiySgV28NQJ0bp5IZePE_iPT-IGarrks5aezjtwA%3D%3D", ssl.verifypeer = FALSE)
+script <- getURL("https://raw.githubusercontent.com/NeuroBio/BirbClass/master/TestCase%20SetUp.R?token=AITiyVLyEMbcZ_6paYShVoLGonzKqsbDks5aezlWwA%3D%3D", ssl.verifypeer = FALSE)
 eval(parse(text = script))
-
+rm(script)
 #####
 
+
+
 #INSTRUCTIONS!
+#####
 #The point of today is that sharing is caring,
 #but sharing badly is almost as bad as not sharing.
 #This will not be a "coding lesson" per se as much as a day
-#to make useful code for the whole class and learning to do it well.
+#to learn how to solve complex problems and to
+#make useful code for the whole class.
 
 #There are three projects.  Two people will work separately and
 #together on each one.  Each person will write their own code
-#in an attempt to find the best solution.  You may talk and
-#share ideas.  Your code should be well commented, so another
-#member of the class knows what each segment of code does
+#in an attempt to find the best solution but you may talk and
+#share ideas with yoru partner.  Your code should be well commented,
+#so another member of the class would know what each segment of code does
+
+#We will spent part of the class workign on the projects, and
+#another part testing whatever you got done.  DO NOT PANIC.
+#These are complex problems and I don't expect you to to get
+#them entirely done.
 #####
 
-#Project 1:
+
+
+#HOMEWORK:
+#####
+#Your homework will be to compare the code you wrote to
+#an answer key for the project I will provide after class.
+#Explain how my code is diferent and the same as yours
+#and include an questions you have about what I did,
+#why I did it, and why it works.
+#####
+
+
+
+#PROJECT 1:
+#####
 #The Cleaner:  This is a function that will convert the data from
 #it's raw form into something useful.  The two data types are
 #the ParserData (TestData) and the MetaData (MetaData)
@@ -148,10 +173,12 @@ Cleaner(P1_Ai, P1_Aii)
 Cleaner(P1_Bi, P1_Bii)
 Cleaner(P1_Ci, P1_Cii)
 Cleaner(P1_Di, P1_Dii, YearOnly = TRUE)
+#####
 
-#this is an extra case to prove that my different functions work together!
 
-#Project 2:
+
+#PROJECT 2:
+#####
 #The DuplicateFlagger: this name is self explanatory.
 #There is a problem that we may or may not have, but we should try to check for:
 #The data is uploaded by citizen scientists who may forget what they have uploaded
@@ -177,7 +204,7 @@ Cleaner(P1_Di, P1_Dii, YearOnly = TRUE)
 ###E) Row Indicies Scrambled
 ###F) Col Indicies Scrambled
 
-#ANSWERS
+#ANSWERS:
 #Correct Answer for A, B, D, and F. 
 ###[1] "Check Chipping Sparrow for indicies: 5 6 7 8 9 10"
 ###[1] "Check Chipping Sparrow for indicies: 11 12"
@@ -249,9 +276,12 @@ DuplicateFlagger(P2_C$MetaData)
 DuplicateFlagger(P2_D$MetaData)
 DuplicateFlagger(P2_E$MetaData)
 DuplicateFlagger(P2_F$MetaData)
+#####
 
 
-#Project 3:
+
+#PROJECT 3:
+#####
 #BoutCompiler: remember that some of the parsed bouts came from the same song recording.
 #we want a function that will find these duplicate bouts and REPLACE them with a SINGLE average
 #of the entries.  Return the edited results.
