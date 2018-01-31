@@ -3,7 +3,9 @@ rm(list = objects()) #this kills everything in your environment!!!!!
 setwd("C:/Users/Kara/Documents/r/Birbclass")
 TestData<-read.table("abigailtestdata.txt", sep = '\t',header = TRUE, fileEncoding = "UTF-8")
 MetaData<-read.csv('TestMetaData Feb 19th-Mar19th.csv')
-#source(BypassData.R)
+
+
+source(BypassData.R)
 
 #The point of today is that sharing is caring,
 #but sharing badly is almost as bad as not sharing.
