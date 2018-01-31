@@ -24,7 +24,7 @@ P1_Ci$FileName <- gsub("SegSyllsOutput", "Lol, if this is still an issue, than y
 #Scrambled cols
 P1_Di <- P1_Ai
 P1_Dii <- P1_Aii
-seed(49)
+set.seed(49)
 ScrambleInd <- sample(1:45, 45)
 P1_Di <- P1_Di[,ScrambleInd]
 ScrambleInd <- sample(1:15, 15)
@@ -124,13 +124,13 @@ P2_D <- TestP2_A
 P2_D$MetaData <- rbind.data.frame(P2_D$MetaData,P2_D$MetaData)
 #original data, row order scrambled
 P2_E <- TestP2_A
-seed(49)
+set.seed(49)
 ScrambleInd <- sample(1:25, 25)
 P2_E$MetaData <- P2_E$MetaData[ScrambleInd,]
 
 #original data, col order scrambled
 P2_F <- TestP2_A
-seed(49)
+set.seed(49)
 ScrambleInd <- sample(1:12, 12)
 P2_E$MetaData <- P2_E$MetaData[,ScrambleInd]
 
@@ -157,7 +157,7 @@ P3_E <- P3_D
 P3_E$MetaData$XenoCantoCatalogNumber[c(13:15)] <- 707
 #test for scrambled cols
 P3_F <- P3_E
-seed(49)
+set.seed(49)
 ScrambleInd <- sample(1:38, 38)
 P3_F$ParseData <- P2_E$ParseData[,ScrambleInd]
 #test with extra rows
