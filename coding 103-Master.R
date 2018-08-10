@@ -8,18 +8,6 @@ BirdColor[c(2,7, 10:20, 35, 37)] <- "Red"
 print(BirdColor)
 BirdColor <- as.factor(BirdColor)
 BirdColor
-#organizing the data like this allows for extra power
-BirdColor[1]
-levels(BirdColor)[1]
-BirdColor[1] <- "Yellow" #cannot add
-BirdColor <- factor(BirdColor, levels = c(levels(BirdColor), "Yellow"))
-BirdColor[1] <- "Yellow" #Can add
-BirdColor
-levels(BirdColor) <- c("Blue Jays","Robins","Finches")
-BirdColor
-table(BirdColor)
-levels(BirdColor)[1] <- "Blue Birds"
-BirdColor
 
 
 #Lists are the most flexible data type in R
@@ -79,10 +67,12 @@ sub("00:00", "NULL", time) #first instance only!!!!
 sub("0", "lul", time)
 gsub("0", "lul", time)
 
+https://cran.r-project.org/web/packages/stringr/vignettes/regular-expressions.html
+
 #Special characters
 #metacharacters: $ * + . ? [ ] ^ { } | ( ) \
 
-#\ is the escape character.  Use it before all of the following
+#\ is the escape character.  Use it before all of the following:
 #'  #single quote
 #"  #double quotes
 #n  #newline
@@ -135,6 +125,7 @@ paste("This is a starter \n sentence.")
 cat("This is a starter \n sentence.")
 writeLines("This is a starter \n sentence.")
 
+text <- "This is a starter \n sentence."
 store <- paste("extra text", text, "ender")
 store2 <- unlist(strsplit(store, " "))
 
@@ -152,8 +143,10 @@ grep("\\\n", store2, value = TRUE)
 grep("\\\\n", store2, value = TRUE)
 
 grep("t{1}", store2, value = TRUE)
+grep("T{1}", store2, value = TRUE)
 grep("t{1,}", store2, value = TRUE)
 grep("t{2}", store2, value = TRUE)
+grep("t{1}", store2, value = TRUE)
 
 #Questions:
 
@@ -167,12 +160,10 @@ NewList <- list(MetaData$RecordingType, MetaData[,5:6],
                 TestData$avg_syllable_duration.ms., LETTERS[seq(1,26, by=2)])
 ###b) Rename the list elements as Record, Bird, SylDur, and Nonsense
 names(NewList) <- c("Record", "Bird", "SylDur", "Nonsense")
-###c) How many levels are there in Record
-levels(NewList$Record)
-###d) Convert Record into a character vector and use gsub to convert all "Song" entries into "song"
+###c) Convert Record into a character vector and use gsub to convert all "Song" entries into "song"
 NewList$Record <- as.character(NewList$Record)
 NewList$Record <- gsub("S", "s", NewList$Record)
-###e) Pull the Bird and SylDur data for any records labeled as atypical.
+###d) Pull the Bird and SylDur data for any records labeled as atypical.
 #Unlist the data.  What is the class and what do the numbers under BirdSpecies and Birdgenus mean?
 ind <- grep("atypical", NewList$Record)
 data <- unlist(c(NewList$Bird[ind,],NewList$SylDur[ind]))
@@ -181,19 +172,7 @@ class(data)
 #birdgenus and birdspecies were originally factors
 
 #Question 2:
-###a) Create a factor called TestFactor that is 40 elements long.  There are  2 levels:
-#A and B the first 20 elements are A and the remainder are B. 
-TestFactor <- factor(c(rep("A", 20), rep("B", 20)))
-###b) Using TestFactor from 1d, create NewFactor that includes 3 more levels:
-#C, D, and E.  Add two more elements: D, E, and change element 14 to D.
-#How many elements fit into each group?
-#####HINT: A variable has to exist to index it, but you can call non-existent
-#indicies for a variabe to assign them
-NewFactor <- factor(TestFactor, levels=c(levels(TestFactor), "C", "D", "E"))
-NewFactor[41:42] <- c("D", "E")
-NewFactor[16] <- "D"
-table(NewFactor)
-###c)The syllable_pattern column in TestData is a factor.  It should not be.
+### The syllable_pattern column in TestData is a factor.  It should not be.
 #This data needs to be converted into a list of 25 vectors we will call FacToList.
 #####HINT: #You can test if you have done the right thing using the following:
 class(FacToList) #list

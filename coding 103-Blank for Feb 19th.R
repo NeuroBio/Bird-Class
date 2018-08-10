@@ -4,8 +4,6 @@ TestData<-read.table("abigailtestdata.txt", sep = '\t',header = TRUE, fileEncodi
 MetaData<-read.csv('TestMetaData.csv')
 #Factors are excellent for categorical data.
 
-#organizing the data like this allows for extra power
-
 
 #Lists are the most flexible data type in R
 #Remember the old data types
@@ -37,10 +35,12 @@ MetaData<-read.csv('TestMetaData.csv')
 #changing one set of text for another
  #first instance only!!!!
 
+https://cran.r-project.org/web/packages/stringr/vignettes/regular-expressions.html
+
 #Special characters
 #metacharacters: $ * + . ? [ ] ^ { } | ( ) \
 
-#\ is the escape character.  Use it before all of the following
+#\ is the escape character.  Use it before all of the following:
 #'  #single quote
 #"  #double quotes
 #n  #newline
@@ -78,38 +78,26 @@ MetaData<-read.csv('TestMetaData.csv')
 #iii) a vector of the average syllable duration from TestData.
 #iV) a character string of every other letter in the alphebet in UPPERCASE
 
+
 ###b) Rename the list elements as Record, Bird, SylDur, and Nonsense
 
-###c) How many levels are there in Record
+###c) Convert Record into a character vector and use gsub to convert all "Song" entries into "song"
 
-###d) Convert Record into a character vector and use gsub to convert all "Song" entries into "song"
 
-###e) Pull the Bird and SylDur data for any records labeled as atypical.
+###d) Pull the Bird and SylDur data for any records labeled as atypical.
 #Unlist the data.  What is the class and what do the numbers under BirdSpecies and Birdgenus mean?
+
+
 
 #The Class is numeric, and the numbers are related to the fact that
 #birdgenus and birdspecies were originally factors
 
 #Question 2:
-###a) Create a factor called TestFactor that is 40 elements long.  There are  2 levels:
-#A and B the first 20 elements are A and the remainder are B. 
-
-###b) Using TestFactor from 1d, create NewFactor that includes 3 more levels:
-#C, D, and E.  Add two more elements: D, E, and change element 14 to D.
-#How many elements fit into each group?
-#####HINT: A variable has to exist to index it, but you can call non-existent
-#indicies for a variabe to assign them
-
-
-
-
-###c)The syllable_pattern column in TestData is a factor.  It should not be.
+### The syllable_pattern column in TestData is a factor.  It should not be.
 #This data needs to be converted into a list of 25 vectors we will call FacToList.
 #####HINT: #You can test if you have done the right thing using the following:
 class(FacToList) #list
 class(FacToList[[1]]) #numeric
-
-
 
 
 

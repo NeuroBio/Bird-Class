@@ -226,9 +226,9 @@ length(which(TestData$avg_note_duration.ms. > 40)) >= 1
 #you can start a new line in the middle of a function after any ","
 #E.G.: plot(x,
 #            y)
-plot(TestData$num_syllables,TestData$bout_duration.ms., col="red",
+plot(TestData$num_syllables,TestData$bout_duration.ms., col="cyan3",
      xlab = "Number of Syllables", ylab="Bout Durantion",
-     main="[your name]'s Awesome Nonsense Graph!!!", pch=19, type="b")
+     main="[your name]'s Awesome Nonsense Graph!!!", pch=19, type="b", lty=2)
 
 
 #When you get here: Hopefully that last excersize was more "Ah-ha!" moments
