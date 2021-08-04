@@ -3,7 +3,7 @@
 ## Overview
 The is a repository with the resources I used to design my coding class in 2018.
 
-### resources
+### Resources
 - journal articles to introduce students to the question: How does urbanization affect birdsong?
 - rubrics for writing a final paper
 - Exams with Keys
