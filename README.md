@@ -4,11 +4,16 @@
 The is a repository with the resources I used to design my coding class in 2018.
 
 ### Resources
-- journal articles to introduce students to the question: How does urbanization affect birdsong?
-- rubrics for writing a final paper
+- Journal articles to introduce students to the question: How does urbanization affect birdsong?
+- Rubrics for writing a final paper
+- intro to accessing a server with bash
 - Exams with Keys
-- lecture notes in master, pre-lecture and post-lecture forms
+- Lecture notes in master, pre-lecture and post-lecture forms
+  - As Planned: lectures 1-4 + an introduction to the flexibility of R plotting
+  - Impromtu: further help on issues the class was having in understanding certain topics
+  - Impromtu: Solutions for Euler problems; used to give my students more coding practice
 
 ### Outcomes
+- The birds each student analyzed
 - The final poster my 2018 students put together
-- photos of them presenting taken by the BioSci department
+- Photos of them presenting taken by the BioSci department
