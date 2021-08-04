@@ -1,6 +1,6 @@
 ###PRETTY PLOTTING!
 
-#critical!  When looking at the plot in r, make sure teh plot window
+#critical!  When looking at the plot in r, make sure the plot window
 #is large enough to show the plot or you will get an error!
 
 #basic
@@ -29,7 +29,7 @@ plot(x,y,
      #add a main title
      main = "Role of Chicken \n in Pirate Hostility",
      #add a subtitle
-     sub="This is hadcore research",
+     sub="This is hardcore research",
      #change the line style
      lty=3,
      #change the dot/point style

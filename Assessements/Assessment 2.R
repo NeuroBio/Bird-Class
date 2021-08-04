@@ -112,7 +112,7 @@ TTestFreq("Grasshopper Sparrow", Divide)$p.val < BonAlpha
 #4) Changes in Grasshopper Sparrow singing time as Brightness increases.
 par(mfrow=c(2,2))#so I can see all four plots at once :)
 #Each plot should have:
-#1) appropriate X and Y lables
+#1) appropriate X and Y labels
 #2) a title that states the species being plotted
 #3) a vertical line located at x=Divide
 

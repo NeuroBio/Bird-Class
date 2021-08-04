@@ -7,7 +7,7 @@ TestData[,1] #25 outputs  #this required YOU as a person to manually look at the
 
 #1D
 plot((TestData[,"num_syllables"]), (TestData[,"bout_duration.ms."]))
-#not really a msitake, but the parens are unnecessary; commas tell you that an argument has ended
+#not really a mistake, but the parens are unnecessary; commas tell you that an argument has ended
 
 #2A
 index <- which(TestData[,"num_unique_syllables"] > 1)

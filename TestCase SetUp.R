@@ -1,26 +1,25 @@
-#WARNING: You if you are in my class, you should NOT be here.
-#The code below will bias you in your projects and you are not
-#allowed to look at it.  If I catch you looking, I will end you. :)
-#Behave pls.
+# WARNING: You if you are in my class, you should NOT be here.
+# The code below will bias you in your projects and you are not
+# allowed to look at it.
 
-#Make sure the kids did the thing they need to do. :/
+# Make sure the kids did the thing they need to do.
 if(exists("TestData") == FALSE | exists("MetaData") == FALSE){
   stop("You need load in TestData and Metadata from your main script first!--CR")
 }
 
 
-#Test Cases for Project 1
-#Original Data
+# Test Cases for Project 1
+# Original Data
 P1_Ai <- TestData
 P1_Aii <- MetaData
-#Program renamed
+# Program renamed
 P1_Bi <- P1_Ai
 P1_Bii <- P1_Aii
 P1_Bi$FileName <- gsub("SegSyllsOutput", "Chipper_Alpha", P1_Bi$FileName)
-#Program renamed again
+# Program renamed again
 P1_Ci <- P1_Ai
 P1_Cii <- P1_Aii
-P1_Ci$FileName <- gsub("SegSyllsOutput", "Lol, if this is still an issue, than you are treating a symptom and not the problem. <3", P1_Ci$FileName)
+P1_Ci$FileName <- gsub("SegSyllsOutput", "If this is still an issue, than you are treating a symptom and not the problem.", P1_Ci$FileName)
 #Scrambled cols
 P1_Di <- P1_Ai
 P1_Dii <- P1_Aii
@@ -44,17 +43,17 @@ Initializer <- function(ParseData, MetaData, YearOnly = FALSE){
                                              "num_unique_syllables",
                                              "mean_syllable_stereotypy"))
   ParseData <- ParseData[-remove]
-  ###remove excess from the FileNames
-  ###I'm pulling the bout data location with the following pattern:
+  ### remove excess from the FileNames
+  ### I'm pulling the bout data location with the following pattern:
   loc <- regexpr("b[0123456789]{1,}of[0123456789]{1,}", ParseData$FileName)
-  ###the match length attribute tells me how many chara are in the pattern
+  ### the match length attribute tells me how many chara are in the pattern
   stop <- attr(loc, "match.length")+as.vector(loc)
   
   ParseData$Bouts <- vector(mode="numeric", length(stop))
   for(i in seq_along(ParseData$FileName)){
     ParseData$Bouts[i] <- substring(ParseData$FileName[i], loc[i], stop[i]-1)
   }
-  ###Same basic logic to truncate the XC IDs
+  ### Same basic logic to truncate the XC IDs
   loc <- regexpr("_[0123456789]{1,}_", ParseData$FileName)
   stop <- attr(loc, "match.length")+as.vector(loc)
   for(i in seq_along(ParseData$FileName)){
@@ -119,7 +118,7 @@ P2_C <- P2_A
 P2_C$MetaData$BirdCommonName[12:25] <- "Red-winged Black Bird"
 P2_C$MetaData$BirdGenus[12:25] <- "Agelaius"
 P2_C$MetaData$BirdSpecies[12:25] <- "phoeniceus"
-#original data included intional, bout duplicates
+#original data included, bout duplicates
 P2_D <- P2_A
 P2_D$MetaData <- rbind.data.frame(P2_D$MetaData,P2_D$MetaData)
 #original data, row order scrambled
@@ -168,7 +167,7 @@ P3_G$MetaData <- rbind.data.frame(P3_G$MetaData,P3_G$MetaData)
 
 
 
-#kill the excess to hide it form clever peeps
+#kill the excess to hide it from clever peeps
 rm("Initializer")
 rm(MetaData)
 rm(TestData)
